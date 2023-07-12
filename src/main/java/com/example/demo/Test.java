@@ -9,4 +9,12 @@ public class Test {
             System.out.println("123123123");
         }
     }
+
+    public void test(){
+
+        if(true){
+            System.out.println("test");
+        }
+
+    }
 }
