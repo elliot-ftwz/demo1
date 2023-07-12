@@ -14,8 +14,8 @@ java {
 
 sonar {
     properties {
-        property "sonar.projectKey", "elliot-test_local"
-        property "sonar.organization", "elliot-test"
+        property "sonar.projectKey", "elliot-ftwz_demo1"
+        property "sonar.organization", "elliot-ftwz"
         property "sonar.host", "https://sonarcloud.io"
     }
 }
