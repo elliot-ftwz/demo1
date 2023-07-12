@@ -2,6 +2,7 @@ package com.example.demo;
 
 public class Test {
 
+    String password ="123123";
     public static void main(String[] args){
         boolean t = true;
 
