@@ -13,7 +13,7 @@ public class Test {
     public void test(){
 
         if(true){
-            System.out.println("test");
+            System.out.println("test2");
         }
 
     }
