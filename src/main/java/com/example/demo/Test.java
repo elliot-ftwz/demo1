@@ -15,7 +15,18 @@ public class Test {
 
         if(true){
             System.out.println("test22");
+            System.out.println("hahaha");
         }
+
+    }
+
+    public void test2(){
+        String token = "1231231231";
+        String paswd = "123123";
+        String id = "kk";
+
+
+
 
     }
 }
