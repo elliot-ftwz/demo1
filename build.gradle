@@ -16,7 +16,7 @@ sonar {
     properties {
         property "sonar.projectKey", "elliot-ftwz_demo1"
         property "sonar.organization", "elliot-ftwz"
-        property "sonar.host", "https://sonarcloud.io"
+        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
 
