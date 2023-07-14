@@ -1,0 +1,50 @@
+name: SonarCloud Static Analysis
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+
+      - name: SonarCloud Scan
+        run: sonar-scanner
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Extract SonarCloud Report
+        run: |
+          sonar-scanner -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.analysis.mode=preview -Dsonar.report.export.path=report.json
+
+      - name: Add SonarCloud Report to PR Comment
+        uses: actions/github-script@v4
+        if: github.event_name == 'pull_request'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const report = require('./report.json');
+            const lines = report.projectStatus.status.split('\\n');
+            const issues = lines.filter(line => line.includes('Open issues'));
+
+            const commentBody = `SonarCloud Report: \n\n${issues.join('\n')}`;
+
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });
