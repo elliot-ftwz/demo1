@@ -37,7 +37,7 @@ jobs:
 
       - name: Extract SonarCloud Report
         run: |
-          sonar-scanner -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=elliot-ftwz_demo1 -Dsonar.organization=elliot-ftwz -Dsonar.analysis.mode=preview -Dsonar.report.export.path=report.json
+          sonar-scanner -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=elliot-ftwz_demo1 -Dsonar.organization=elliot-ftwz -Dsonar.report.export.path=report.json
 
       - name: Add SonarCloud Report to PR Comment
         uses: actions/github-script@v4
