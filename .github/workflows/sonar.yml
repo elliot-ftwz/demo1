@@ -24,9 +24,9 @@ jobs:
 
       - name: Download and Install Sonar Scanner
         run: |
-          curl -OL https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-9.9.zip
-          unzip sonar-scanner-cli-9.9.zip
-          mv sonar-scanner-9.9 sonar-scanner
+          curl -OL https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856.zip
+          unzip sonar-scanner-cli-4.8.0.2856.zip
+          mv sonar-scanner-cli-4.8.0.2856 sonar-scanner
           echo "sonar-scanner/bin" >> $GITHUB_PATH
 
       - name: SonarCloud Scan
