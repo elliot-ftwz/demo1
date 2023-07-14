@@ -21,6 +21,15 @@ public class Test {
 
     }
 
+    public void test3(){
+
+        if(true){
+            System.out.println("test22");
+            System.out.println("hahaha");
+        }
+
+    }
+
     public void test2(){
         String token = "1231231231";
         String paswd = "123123";
