@@ -6,6 +6,7 @@ public class Test {
     public static void main(String[] args){
         boolean t = true;
 
+        String test = "prtest";
         if(t == true && t){
             System.out.println("123123123");
         }
