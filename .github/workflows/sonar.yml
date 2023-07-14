@@ -29,10 +29,11 @@ jobs:
           mv sonar-scanner-4.8.0.2856 sonar-scanner
           echo "sonar-scanner/bin" >> $GITHUB_PATH
 
-      - name: SonarCloud Scan
-        run: sonar-scanner
+      - name: Build and analyze
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: ./gradlew build sonar -Dsonar.host.url=https://sonarcloud.io --info
 
       - name: Extract SonarCloud Report
         run: |
