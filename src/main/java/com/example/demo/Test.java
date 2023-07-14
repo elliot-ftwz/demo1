@@ -30,6 +30,12 @@ public class Test {
 
     }
 
+
+    public void test5(){
+        String password = "1111";
+
+        System.out.println(password);
+    }
     public void test2(){
         String token = "1231231231";
         String paswd = "123123";
