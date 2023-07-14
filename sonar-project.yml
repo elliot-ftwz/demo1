@@ -1,12 +1,16 @@
-sonar.projectKey: elliot-ftwz_demo1
-sonar.organization: elliot-ftwz
-sonar.host.url: https://sonarcloud.io
-sonar.sources: src
-sonar.tests: tests
-sonar.java.binaries: build/classes
-sonar.java.libraries: libs/**/*.jar
-sonar.sourceEncoding: UTF-8
-sonar.exclusions: **/*.xml
-sonar.links.homepage: https://github.com/your-organization/your-project
-sonar.links.scm: https://github.com/your-organization/your-project
-sonar.links.issue: https://github.com/your-organization/your-project/issues
+sonar:
+    exclusions: '**/*.xml'
+    host:
+        url: https://sonarcloud.io
+    java:
+        binaries: build/classes
+        libraries: libs/**/*.jar
+    links:
+        homepage: https://github.com/your-organization/your-project
+        issue: https://github.com/your-organization/your-project/issues
+        scm: https://github.com/your-organization/your-project
+    organization: elliot-ftwz
+    projectKey: elliot-ftwz_demo1
+    sourceEncoding: UTF-8
+    sources: src
+    tests: tests
